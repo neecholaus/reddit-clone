@@ -28,7 +28,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                         <form action="/subreddit" method="POST">
                             @csrf
-                            <div id="search-bar" class="p-2">
+                            <div id="search-bar" class="mt-2">
                                 <div class="input-group">
                                     <input
                                         type="text"
@@ -45,10 +45,8 @@
                                 </div>
                             </div>
                         </form>
-                        @if(isset($data))
-                            <div class="bg-white text-faded p-2 rounded">
-                                {{ $data }}
-                            </div>
+                        @if(isset($posts))
+                            @each('partials.posts.item', $posts, 'post')
                         @endif
                     </div>
                 </div>

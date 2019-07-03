@@ -24,9 +24,26 @@ class SubredditController extends Controller
         curl_setopt($c, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 
-        $response = curl_exec($c);
+        $response = json_decode(curl_exec($c));
         curl_close($c);
 
-        return view('index', ['data' => $response]);
+        $children = $response->data->children;
+        $parsedChildren = [];
+
+        // Only send needed data
+        foreach($children as $child) {
+            $parsedChildren[] = [
+                'subreddit' => $child->data->subreddit_name_prefixed,
+                'author' => $child->data->author_fullname,
+                'title' => $child->data->title,
+                'content' => $child->data->selftext,
+                'thumbnail' => $child->data->thumbnail
+            ];
+        }
+
+        return view('index', [
+            'posts' => $parsedChildren,
+            'after' => $response->data->after
+        ]);
     }
 }
