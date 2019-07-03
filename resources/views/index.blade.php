@@ -10,28 +10,47 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Global Styles -->
-        <link href={{ asset('css/app.css') }} rel="stylesheet" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
         <!-- Page Specific Styles -->
-        <link href={{ asset('css/index.css') }} rel="stylesheet" />
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet" />
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="full-height">
             <div id="header">
-                <h3 class="my-0">Reddit Clone</h3>
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <h3 class="my-0">Reddit Clone</h3>
+                    </div>
+                </div>
             </div>
-            <div id="search-bar" class="p-2">
-                <div class="input-group">
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search for a subreddit..." />
-                    <span class="input-group-append">
-                        <button 
-                            type="submit"
-                            class="btn btn-primary">
-                            Search
-                        </button>
-                    <span>
+            <div id="content">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <form action="/subreddit" method="POST">
+                            @csrf
+                            <div id="search-bar" class="p-2">
+                                <div class="input-group">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="subreddit"
+                                        placeholder="Search for a subreddit..." />
+                                    <span class="input-group-append">
+                                        <button 
+                                            type="submit"
+                                            class="btn btn-primary">
+                                            Search
+                                        </button>
+                                    <span>
+                                </div>
+                            </div>
+                        </form>
+                        @if(isset($data))
+                            <div class="bg-white text-faded p-2 rounded">
+                                {{ $data }}
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
