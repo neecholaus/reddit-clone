@@ -11,20 +11,36 @@
                 &#x2B07;
             </p>
         </div>
-        <div class="col-8 col-md-6 col-lg-7 col-xl-9 p-2">
-            <p class="post-meta-data">
-                {{ $post['subreddit'] }} | u/{{ $post['author'] }}
-            </p>
-            <h3 class="post-title">{{ $post['title'] }}</h3>
-            <p class="post-content">{{ $post['content'] }}</p>
-        </div>
-        <div class="col-3 col-md-5 col-lg-4 col-xl-2 p-2">
-            @if(!empty($post['thumbnail']))
-                <img
-                    class="img-fluid"
-                    alt="{{ $post['thumbnail'] }}"
-                    src="{{ $post['thumbnail'] }}" />
-            @endif
+        <div class="col-11">
+            <div class="row">
+                <div class="col-8 col-md-7 col-xl-10 p-2">
+                        <p class="post-meta-data">
+                            {{ $post['subreddit'] }} | u/{{ $post['author'] }}
+                        </p>
+                        <h3 class="post-title">{{ $post['title'] }}</h3>
+                        <p class="post-content">{{ $post['content'] }}</p>
+                    </a>
+                </div>
+                <div class="col-3 col-md-5 col-xl-2 p-2 text-center">
+                    @if(!empty($post['thumbnail']))
+                        <img
+                            class="img-fluid"
+                            alt="{{ $post['thumbnail'] }}"
+                            src="{{ $post['thumbnail'] }}" />
+                    @endif
+                </div>
+                <div class="col-12 p-2">
+                    <a 
+                        target="_self"
+                        href="{{ $post['url'] }}">
+                        <button
+                            type="button"
+                            class="btn btn-secondary btn-sm">
+                            {{ $post['num_comments'] }} Comments
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

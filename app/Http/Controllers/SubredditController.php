@@ -38,7 +38,9 @@ class SubredditController extends Controller
                 'title' => $child->data->title,
                 'content' => $child->data->selftext,
                 'thumbnail' => $child->data->thumbnail !== "self" ? $child->data->thumbnail : null,
-                'score' => formatPostVotes($child->data->score)
+                'score' => formatPostVotes($child->data->score),
+                'url' => $child->data->url,
+                'num_comments' => $child->data->num_comments
             ];
         }
 
