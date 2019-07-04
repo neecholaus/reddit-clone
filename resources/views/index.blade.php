@@ -17,15 +17,9 @@
     <body>
         <div class="full-height">
             <div id="header">
-                <div class="row">
+                <div class="row m-0">
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                         <h3 class="my-0">Reddit Clone</h3>
-                    </div>
-                </div>
-            </div>
-            <div id="content">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                         <form action="/subreddit" method="POST">
                             @csrf
                             <div id="search-bar" class="mt-2">
@@ -45,6 +39,13 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="row m-0">
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                       
                         @if(isset($posts))
                             @each('partials.posts.item', $posts, 'post')
                         @endif

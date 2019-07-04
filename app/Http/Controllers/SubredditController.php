@@ -34,10 +34,11 @@ class SubredditController extends Controller
         foreach($children as $child) {
             $parsedChildren[] = [
                 'subreddit' => $child->data->subreddit_name_prefixed,
-                'author' => $child->data->author_fullname,
+                'author' => $child->data->author,
                 'title' => $child->data->title,
                 'content' => $child->data->selftext,
-                'thumbnail' => $child->data->thumbnail
+                'thumbnail' => $child->data->thumbnail !== "self" ? $child->data->thumbnail : null,
+                'score' => formatPostVotes($child->data->score)
             ];
         }
 

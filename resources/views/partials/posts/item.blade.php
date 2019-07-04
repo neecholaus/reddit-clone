@@ -1,14 +1,28 @@
-<div class="post">
-    <div class="row">
-        <div class="col-md-6 col-lg-8 col-xl-10">
-            <p class="post-meta-data">{{ $post['subreddit'] }}</p>
+<div class="post p-0">
+    <div class="row m-0 p-0">
+        <div class="col-1 post-stats">
+            <p class="text-muted">
+                &#x2B06;
+            </p>
+            <p class="text-muted">
+                {{ $post['score'] }}
+            </p>
+            <p class="text-muted">
+                &#x2B07;
+            </p>
+        </div>
+        <div class="col-8 col-md-6 col-lg-7 col-xl-9 p-2">
+            <p class="post-meta-data">
+                {{ $post['subreddit'] }} | u/{{ $post['author'] }}
+            </p>
             <h3 class="post-title">{{ $post['title'] }}</h3>
             <p class="post-content">{{ $post['content'] }}</p>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-2">
+        <div class="col-3 col-md-5 col-lg-4 col-xl-2 p-2">
             @if(!empty($post['thumbnail']))
                 <img
                     class="img-fluid"
+                    alt="{{ $post['thumbnail'] }}"
                     src="{{ $post['thumbnail'] }}" />
             @endif
         </div>
@@ -18,15 +32,16 @@
 <style>
     .post {
         background: white;
+        border: solid 1px #e3e3e3;
         border-radius: 5px;
-        box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
         margin: 10px 0;
+        overflow: hidden;
         padding: 10px;
         transition: all ease 0.3s;
     }
 
     .post:hover {
-        box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+        border: solid 1px #a3a3a3;
         transition: 0s;
     }
 
@@ -44,5 +59,18 @@
     .post-content {
         color: #a3a3a3;
         font-size: 15px;
+    }
+
+    .post-stats {
+        background: #fafafa;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin: 0;
+        padding: 10px 0 0 0;
+        text-align: center;
+    }
+
+    .post-stats p {
+        margin: 0;
     }
 </style>
