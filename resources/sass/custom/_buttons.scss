@@ -1,0 +1,14 @@
+.btn {
+    &.btn-item-link {
+        border-radius: 5px;
+        color: #878787;
+        font-weight: bold;
+        transition: none;
+
+        &:hover {
+            transition: none;
+            color: #878787;
+            background: #f3f3f3;
+        }
+    }
+}

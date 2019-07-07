@@ -1,7 +1,19 @@
 body {
     #header {
-        background: #f05b11;
-        color: white;
-        padding: 30px 10px;
+        background: white;
+        color: black;
+        padding: 5px;
+
+        #search-bar {
+            background: #f6f7f8;
+            border: 1px solid #edeff1;
+            transition: none;
+
+            &:hover {
+                border-color: #0079d3;
+                background: white;
+                transition: none;
+            }
+        }
     }
 }

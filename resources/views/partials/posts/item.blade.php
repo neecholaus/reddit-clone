@@ -35,7 +35,7 @@
                         href="{{ $post['url'] }}">
                         <button
                             type="button"
-                            class="btn btn-secondary btn-sm">
+                            class="btn btn-item-link btn-sm">
                             {{ $post['num_comments'] }} Comments
                         </button>
                     </a>

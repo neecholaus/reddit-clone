@@ -12,11 +12,9 @@ class SubredditController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(String $sub)
     {
-        $subreddit = $request->post()['subreddit'] ?: 'all';
-
-        $url = "https://reddit.com/r/{$subreddit}.json";
+        $url = "https://reddit.com/r/{$sub}.json";
 
         $c = curl_init();
 

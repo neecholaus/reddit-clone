@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::post('/subreddit', "SubredditController@show");
+Route::get('/r/{sub}', "SubredditController@show");
