@@ -10,27 +10,28 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Global Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
         <!-- Page Specific Styles -->
-        <link href="{{ asset('css/index.css') }}" rel="stylesheet" />
+        <link href="{{ mix('css/index.css') }}" rel="stylesheet" />
     </head>
     <body>
         <div class="full-height">
             <div id="header">
                 <div class="row m-0">
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <input
-                            id="search-bar"
-                            type="text"
-                            class="form-control"
-                            name="subreddit"
-                            placeholder="Search Reddit" />
-                        <form 
-                            action="/r" 
-                            id="search"
-                            method="GET">
-                            @csrf
-                        </form>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input
+                                id="search-bar"
+                                type="text"
+                                class="form-control"
+                                name="subreddit"
+                                placeholder="Search Reddit" />
+                        </div>
                     </div>
                 </div>
             </div>
