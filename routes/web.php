@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/r/{sub}', "SubredditController@show");
+Route::get('/r/{sub}', "SubredditController@index");
+Route::get('/r/{sub}/comments/{postId}', "SubredditController@inspect");

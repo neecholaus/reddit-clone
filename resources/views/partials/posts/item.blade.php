@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-8 col-md-7 col-xl-10 p-2">
                         <p class="post-meta-data">
-                            {{ $post['subreddit'] }} | u/{{ $post['author'] }}
+                            {{ $post['subreddit_prefixed'] }} | u/{{ $post['author'] }}
                         </p>
                         <h3 class="post-title">{{ $post['title'] }}</h3>
                         <p class="post-content">{{ $post['content'] }}</p>
@@ -27,7 +27,7 @@
                 <div class="col-12 p-2">
                     <a 
                         target="_self"
-                        href="{{ $post['url'] }}">
+                        href="/r/{{ $post['subreddit'] }}/comments/{{ $post['id'] }}">
                         <button
                             type="button"
                             class="btn btn-item-link btn-sm">
