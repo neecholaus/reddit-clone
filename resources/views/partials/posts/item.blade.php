@@ -2,14 +2,9 @@
     <div class="row m-0 p-0">
         <div class="col-1 post-stats">
             <p class="text-muted">
-                &#x2B06;
-            </p>
-            <p class="text-muted">
                 {{ $post['score'] }}
             </p>
-            <p class="text-muted">
-                &#x2B07;
-            </p>
+            <p class="text-muted d-none d-sm-block" style="font-size:9px;">UPVOTES</p>
         </div>
         <div class="col-11">
             <div class="row">
