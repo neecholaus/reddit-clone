@@ -43,6 +43,10 @@
                         @if(isset($posts))
                             @each('partials.posts.item', $posts, 'post')
                         @endif
+
+                        @if(isset($post))
+                            @includeWhen(isset($post), 'partials.posts.item', ['post' => $post])
+                        @endif
                     </div>
                 </div>
             </div>

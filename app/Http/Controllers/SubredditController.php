@@ -47,6 +47,8 @@ class SubredditController extends Controller
 
         $post = parsePost($data);
 
-        return response()->json($post);
+        return view('index', [
+            'post' => $post
+        ]);
     }
 }
