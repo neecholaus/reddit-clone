@@ -19,18 +19,20 @@
             <div id="header">
                 <div class="row m-0">
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <div class="input-group">
+                        <div
+                            id="search-bar"
+                            class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fa fa-search"></i>
                                 </span>
                             </div>
                             <input
-                                id="search-bar"
                                 type="text"
                                 class="form-control"
                                 name="subreddit"
-                                placeholder="Search Reddit" />
+                                placeholder="Search Reddit"
+                                autocomplete="off" />
                         </div>
                     </div>
                 </div>
