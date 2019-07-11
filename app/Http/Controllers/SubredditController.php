@@ -47,8 +47,17 @@ class SubredditController extends Controller
 
         $post = parsePost($data);
 
+        // Grab post comments
+        $comments = [];
+        foreach($response[1]->data->children as $comment) {
+            if($comment->kind == "t1") {
+                $comments[] = parseComment($comment->data);
+            }
+        }
+
         return view('index', [
-            'post' => $post
+            'post' => $post,
+            'comments' => $comments
         ]);
     }
 }

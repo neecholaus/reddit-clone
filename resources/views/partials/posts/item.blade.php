@@ -34,6 +34,18 @@
                             {{ $post['num_comments'] }} Comments
                         </button>
                     </a>
+                    @if(isset($post['url']))
+                    <a 
+                        target="_blank"
+                        href="{{ $post['url'] }}">
+                        <button
+                            type="button"
+                            class="btn btn-item-link btn-sm">
+                            <i class="fa fa-link mr-1"></i>
+                            Link
+                        </button>
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>

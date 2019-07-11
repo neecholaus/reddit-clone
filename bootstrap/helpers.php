@@ -23,7 +23,18 @@
             'thumbnail' => $data->thumbnail !== "self" ? $data->thumbnail : null,
             'score' => formatPostVotes($data->score),
             'id' => $data->id,
-            'num_comments' => $data->num_comments
+            'num_comments' => $data->num_comments,
+            'url' => !in_array(explode('.', $data->domain)[0], ['self','v']) ? $data->url : null
+        ];
+    }
+
+    function parseComment($data) {
+        return [
+            'subreddit_prefixed' => $data->subreddit_name_prefixed,
+            'subreddit' => $data->subreddit,
+            'author' => $data->author,
+            'body' => $data->body,
+            'score' => formatPostVotes($data->score)
         ];
     }
 
